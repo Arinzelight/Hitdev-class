@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment3</title>
+  </head>
+  <body>
+    <p id="result"></p>
+
+    <script>
+      output = document.getElementById("result");
+
+      // Assignment No.3
+      function calculateGPA(courseGrades) {
+        const gradePoints = {
+          A: 5.0,
+          B: 4.0,
+          C: 3.0,
+          D: 2.0,
+          E: 1.0,
+        };
+
+        let totalCredits = 0;
+        let totalGradePoints = 0;
+
+        courseGrades.forEach(function (course) {
+          const creditUnit = course.creditUnit;
+          const grade = course.grade;
+          const gradePoint = gradePoints[grade]; //accessing the values of gradePoints
+
+          totalCredits += creditUnit;
+          totalGradePoints += gradePoint * creditUnit;
+        });
+
+        const gpa = totalGradePoints / totalCredits;
+
+        return gpa.toFixed(2);
+      }
+
+      const grades = [
+        { creditUnit: 3, grade: "A" },
+        { creditUnit: 4, grade: "B" },
+        { creditUnit: 2, grade: "C" },
+        { creditUnit: 3, grade: "A" },
+        { creditUnit: 3, grade: "B" },
+      ];
+
+      const result = calculateGPA(grades);
+
+      console.log(result);
+      output.innerHTML = [`Your GPA is ${result}`];
+    </script>
+  </body>
+</html>
