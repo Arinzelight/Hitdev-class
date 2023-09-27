@@ -127,7 +127,7 @@ console.log(stack.isEmpty())
 
 
 
-/* =========== IMPLEMENTING STACK IN JAVASCRIPT ========== */
+/* =========== IMPLEMENTING QUEUE IN JAVASCRIPT ========== */
 
 class Queue {
     constructor() {
